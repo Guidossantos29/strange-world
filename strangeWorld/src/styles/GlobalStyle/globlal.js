@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     flex-direction: column;
     gap: 20px;
+    width: 300px;
   }
   label{
     
@@ -22,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    
 
     
   }
@@ -38,12 +40,12 @@ export const GlobalStyle = createGlobalStyle`
     height: 40px;
     width: 180px;
     position: relative;
-    background-color: transparent;
+    background-color: blue;
     cursor: pointer;
     border: 2px solid #252525;
     overflow: hidden;
     border-radius: 30px;
-    color: #333;
+    color: white;
     transition: all 0.5s ease-in-out;
 
   &:hover{
