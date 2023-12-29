@@ -46,7 +46,7 @@ export const useAuthentication = () => {
 
         } catch(error){
 
-            console.log(error.message);
+            console.log(error.menssage);
             console.log(typeof error.mensage);
 
             let systemErrorMessage;
@@ -68,6 +68,75 @@ export const useAuthentication = () => {
         }
     }
 
+    const logout = () => {
+        checkIfIsCancelled()
+
+        signOut(auth)
+
+
+    }
+
+    const login = async(data) => {
+        checkIfIsCancelled()
+    
+        setLoading(true)
+        setError(null)
+
+        try{
+            await signInWithEmailAndPassword(auth,data.email,data.password)
+            setLoading(false)
+
+
+
+        } catch (error){
+            let systemErrorMessage;
+
+            if (error.message.includes('user-not-found')) {
+                systemErrorMessage = 'Usuario não encontrado'
+            } else if(error.message.includes('wrong-password')){
+                systemErrorMessage = 'senha incorreta'
+            } else {
+                systemErrorMessage = 'Ocorreu um erro,tente novamente mais tarde.'
+            }
+
+            
+            setError(systemErrorMessage)
+            setLoading(false)
+        }
+    
+        // try{
+        //     const {user} = await signInWithEmailAndPassword(
+        //         auth,
+        //         data.email,
+        //         data.password
+        //     )
+    
+        //     await updateProfile(user,{
+        //         displayName: data.displayName
+        //     })
+    
+        //     setLoading(false)
+    
+        // } catch (error) {
+        //     console.log(error.message);
+       
+      
+        //     let systemErrorMessage;
+      
+        //     if (error.message.includes("user-not-found")) {
+        //       systemErrorMessage = "Usuário não encontrado.";
+        //     } else if (error.message.includes("wrong-password")) {
+        //       systemErrorMessage = "Senha incorreta.";
+        //     } else {
+        //       systemErrorMessage = "Ocorreu um erro, por favor tenta mais tarde.";
+        //     }
+      
+        //     console.log(systemErrorMessage);
+      
+        //     setError(systemErrorMessage);
+        //   }
+    }
+
     useEffect(() => {
         return () => setCancelled(true)
     },[])
@@ -76,7 +145,9 @@ export const useAuthentication = () => {
         auth,
         createUser,
         error,
-        loading
+        loading,
+        logout,
+        login
     }
 }    
 

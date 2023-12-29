@@ -7,8 +7,8 @@ import { useAuthValue } from '../../context/AuthContext'
 
 
 const NavBar = () => {
-
-    const {user} = useAuthValue
+    const {logout} = useAuthentication()
+    const {user} = useAuthValue()
 
   return (
     <NavbarStyle>
@@ -21,7 +21,7 @@ const NavBar = () => {
                 <CustomNavLink to='/home'>Home</CustomNavLink>
                 
             </NavbarItem>
-           {!user && (
+           {user && (
             <>
                  <NavbarItem>
                 <CustomNavLink to='/post/create'>Novo Post</CustomNavLink>
@@ -34,10 +34,28 @@ const NavBar = () => {
             
             </>
            )}
+           {!user && (
+            <>
+            <NavbarItem>
+           <CustomNavLink to='/login'>Entrar</CustomNavLink>
+           
+            </NavbarItem>
+            <NavbarItem>
+           <CustomNavLink to='/register'>Cadastrar</CustomNavLink>
+           
+       </NavbarItem>
+       
+       </>
+           )}
             <NavbarItem>
                 
                 <CustomNavLink to='/about'>Sobre</CustomNavLink>
             </NavbarItem>
+            {user && (
+                <NavbarItem>
+                    <button onClick={logout}>Sair</button>
+                </NavbarItem>
+            )}
         </NavbarList>  
     </NavbarStyle>
   )
