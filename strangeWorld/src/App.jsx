@@ -50,18 +50,18 @@ function App() {
 
   return (
    <div>
-     <AuthProvider value={user}>
+     <AuthProvider value={{user}}>
       <GlobalStyle />
         <BrowserRouter>
         <NavBar/>
         <ContainerMain>
           <Routes>
-            <Route path='/home' element={<Home/> }></Route>
+            <Route path='/' element={<Home/> }></Route>
             <Route path='/about' element={ <About/> }></Route>
-            <Route path='/register' element={ <Register/> }></Route>
-            <Route path='/login' element={ <Login/> }></Route>
-            <Route path='/posts/create' element={ <CreatePost/> }></Route>
-            <Route path='/dashboard' element={ <Dashboard/> }></Route>
+            <Route path='/register' element={!user ? <Register /> : <Navigate to='/' />} />
+            <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
+            <Route path='/posts/create' element={ user ? <CreatePost/> : <Navigate to='/login' /> }></Route>
+            <Route path='/dashboard' element={ user ? <Dashboard/> : <Navigate to='/login' /> }></Route>
           </Routes>
         </ContainerMain>
         <Footer/>

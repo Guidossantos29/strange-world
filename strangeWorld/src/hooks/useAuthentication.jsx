@@ -29,7 +29,7 @@ export const useAuthentication = () => {
         checkIfIsCancelled()
 
         setLoading(true)
-        setError(null)
+        
 
         try{
             const {user} = await createUserWithEmailAndPassword(
@@ -42,7 +42,7 @@ export const useAuthentication = () => {
                 displayName: data.displayName
             })
 
-            setLoading(false)
+            return user;
 
         } catch(error){
 
@@ -80,61 +80,36 @@ export const useAuthentication = () => {
         checkIfIsCancelled()
     
         setLoading(true)
-        setError(null)
+        setError(false)
 
         try{
-            await signInWithEmailAndPassword(auth,data.email,data.password)
+            await signInWithEmailAndPassword(auth, data.email, data.password)
             setLoading(false)
 
 
 
         } catch (error){
+            console.log(error.message);
+            console.log(typeof error.message);
+            console.log(error.message.includes("user-not"));
+      
             let systemErrorMessage;
-
-            if (error.message.includes('user-not-found')) {
-                systemErrorMessage = 'Usuario não encontrado'
-            } else if(error.message.includes('wrong-password')){
-                systemErrorMessage = 'senha incorreta'
+      
+            if (error.message.includes("user-not-found")) {
+              systemErrorMessage = "Usuário não encontrado.";
+            } else if (error.message.includes("wrong-password")) {
+              systemErrorMessage = "Senha incorreta.";
             } else {
-                systemErrorMessage = 'Ocorreu um erro,tente novamente mais tarde.'
+              systemErrorMessage = "Ocorreu um erro, por favor tenta mais tarde.";
             }
-
-            
-            setError(systemErrorMessage)
-            setLoading(false)
-        }
-    
-        // try{
-        //     const {user} = await signInWithEmailAndPassword(
-        //         auth,
-        //         data.email,
-        //         data.password
-        //     )
-    
-        //     await updateProfile(user,{
-        //         displayName: data.displayName
-        //     })
-    
-        //     setLoading(false)
-    
-        // } catch (error) {
-        //     console.log(error.message);
-       
       
-        //     let systemErrorMessage;
+            console.log(systemErrorMessage);
       
-        //     if (error.message.includes("user-not-found")) {
-        //       systemErrorMessage = "Usuário não encontrado.";
-        //     } else if (error.message.includes("wrong-password")) {
-        //       systemErrorMessage = "Senha incorreta.";
-        //     } else {
-        //       systemErrorMessage = "Ocorreu um erro, por favor tenta mais tarde.";
-        //     }
-      
-        //     console.log(systemErrorMessage);
-      
-        //     setError(systemErrorMessage);
-        //   }
+            setError(systemErrorMessage);
+            setLoading(false);
+          }
+    
+          
     }
 
     useEffect(() => {
@@ -145,10 +120,10 @@ export const useAuthentication = () => {
         auth,
         createUser,
         error,
-        loading,
         logout,
-        login
-    }
-}    
+        login,
+        loading,
+      };
+}   
 
 

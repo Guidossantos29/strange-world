@@ -10,6 +10,8 @@ const NavBar = () => {
     const {logout} = useAuthentication()
     const {user} = useAuthValue()
 
+    console.log("User:", user);
+
   return (
     <NavbarStyle>
         <CustomNavLinkLogo to='/'>
@@ -18,13 +20,13 @@ const NavBar = () => {
         </CustomNavLinkLogo>
         <NavbarList>
             <NavbarItem>
-                <CustomNavLink to='/home'>Home</CustomNavLink>
+                <CustomNavLink to='/'>Home</CustomNavLink>
                 
             </NavbarItem>
            {user && (
             <>
                  <NavbarItem>
-                <CustomNavLink to='/post/create'>Novo Post</CustomNavLink>
+                <CustomNavLink to='/posts/create'>Novo Post</CustomNavLink>
                 
             </NavbarItem>
             <NavbarItem>

@@ -24,6 +24,8 @@ const Login = () => {
     const res = await login(user);
 
     console.log(res);
+    console.log("User:", user);
+
   };
 
   useEffect(() => {
@@ -44,7 +46,7 @@ const Login = () => {
             required
             placeholder='Escreva seu usuario ou email'
             value={email}
-            onChange={e => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
 
             />
             
@@ -55,12 +57,18 @@ const Login = () => {
             required
             placeholder='Digite sua senha'
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
 
             />
             
         </label>
-            <button>Cadastrar</button>
+        {!loading && <button className="btn">Entrar</button>}
+        {loading && (
+          <button className="btn" disabled>
+            Aguarde...
+          </button>
+        )}
+        {error && <p className="error">{error}</p>}
             {error && <p>{error}</p>}
       </form>
       
