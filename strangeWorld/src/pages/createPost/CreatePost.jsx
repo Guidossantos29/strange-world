@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthValue } from '../../context/AuthContext'
-import { CreatePostContainer, TextArea } from './CreatePostContainer'
+import { BtnContainer, CreatePostContainer, TextArea } from './CreatePostContainer'
 import { useInsertDocument } from '../../hooks/useInsertDocument'
 
 const CreatePost = () => {
@@ -17,11 +17,14 @@ const CreatePost = () => {
 
   const { insertDocument, response } = useInsertDocument("posts");
 
+  const navigate  = useNavigate()
+
 
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormError("");
+    setFormError('');
+    
 
    
     try {
@@ -61,7 +64,7 @@ const CreatePost = () => {
     });
 
     
-    useNavigate("/");
+    navigate('/');
   };
   return (
     <CreatePostContainer>
@@ -111,15 +114,16 @@ const CreatePost = () => {
             value={tags}
           />
         </label>
-        {!response.loading && <button className="btn">Criar post!</button>}
+        <BtnContainer>
+        {!response.loading && <button>Criar post!</button>}
         {response.loading && (
-          <button className="btn" disabled>
+          <button disabled>
             Aguarde.. .
           </button>
         )}
-        {(response.error || formError) && (
-          <p className="error">{response.error || formError}</p>
+        {(response.error || response.error) && ( <p>{formError.error || formError}</p>
         )}
+        </BtnContainer>
       </form>
       
     </CreatePostContainer>

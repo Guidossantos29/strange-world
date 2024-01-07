@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     flex-direction: column;
     gap: 20px;
-    width: 300px;
+    width: 400px;
   }
   label{
     
