@@ -14,7 +14,7 @@ import Footer from './components/footer'
 
 // PAGES
 
-import Home from './pages/Home/home'
+import Home from './pages/Home/Home.jsx'
 import About from './pages/about/about.jsx'
 import { ContainerMain } from './styles/ConatinerMain/ContainerMain'
 import Register from './pages/register/Register'

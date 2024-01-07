@@ -1,8 +1,8 @@
 import React from 'react'
-import { AboutContainer, CreateBtn } from './about'
+import { AboutContainer, CreateBtn } from './styles'
 
 
-import { Link } from 'react-router-dom'
+
 
 const About = () => {
   return (
