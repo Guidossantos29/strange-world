@@ -32,3 +32,10 @@ export const FormContainerNoPost = styled.form`
 
 
 `
+
+export const FeedContainer = styled.div`
+    background-color: #E3F6FF;
+    border-radius: 20px;
+    padding: 100px;
+
+`

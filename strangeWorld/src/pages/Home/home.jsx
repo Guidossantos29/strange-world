@@ -1,30 +1,37 @@
 import React from 'react'
 import { useState } from 'react'
-import { FormContainerNoPost, HomeConatiner, NoPostContainer } from './styles'
+import { FeedContainer, FormContainerNoPost, HomeConatiner, NoPostContainer } from './styles'
 import { Link } from 'react-router-dom'
+import { useFetchDocuments } from '../../hooks/useFetchDocuments'
+import PostDetail from '../../components/PostDetail'
+
 
 const Home = () => {
   const [query,setQuery] = useState('')
-  const [posts] = useState([])
+  const {documents:posts,loading} = useFetchDocuments('posts')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
 
 
 
   return (
     <HomeConatiner>
       <h1>Veja o que temos de mais recente</h1>
-      <FormContainerNoPost>
+      <FormContainerNoPost onSubmit={handleSubmit}>
         <input type="text" onChange={(e) => setQuery(e.target.value)} />
         <button>O que procura?</button>
       </FormContainerNoPost>
-      <div>
-        <h1>Post...</h1>
+      <FeedContainer>
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post}/>)}
         {posts && posts.length === 0 && (
           <NoPostContainer>
             <p>Não foram encontrado posts</p>
             <Link to='/posts/create'>criar primeiro posts</Link>
             </NoPostContainer>
         )}
-      </div>
+      </FeedContainer>
     </HomeConatiner>
   )
 }

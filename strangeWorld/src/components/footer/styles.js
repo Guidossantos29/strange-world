@@ -6,12 +6,13 @@ export const FooterContainer = styled.footer`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 150px;
     width: 100%;
     gap: 20px;
-    background-color:#FAE7F3 ;
-    position: absolute;
-    bottom:0 ;
+    background-color: #FAE7F3;
+    position: relative;
+    bottom: 0;
+    height: 150px; 
+    
 
 `
 
