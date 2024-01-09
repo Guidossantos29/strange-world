@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { FeedContainer, FormContainerNoPost, HomeConatiner, NoPostContainer } from './styles'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useFetchDocuments } from '../../hooks/useFetchDocuments'
 import PostDetail from '../../components/PostDetail'
 
@@ -10,8 +10,14 @@ const Home = () => {
   const [query,setQuery] = useState('')
   const {documents:posts,loading} = useFetchDocuments('posts')
 
+  const navigate = useNavigate()
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    
+    if(query){
+      return navigate(`/search?q=${query}`)
+    }
   }
 
 
