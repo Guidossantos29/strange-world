@@ -23,11 +23,13 @@ import CreatePost from './pages/createPost/createPost'
 import Dashboard from './pages/dashboard/dashboard'
 import Search from './pages/Search/Search.jsx'
 import Post from './pages/Post/Post.jsx'
+import EditPost from './pages/EditPost/EditPost.jsx'
 
 
 // CONTEXT
 
 import { AuthProvider } from './context/AuthContext'
+
 
 
 
@@ -64,6 +66,7 @@ function App() {
             <Route path='/' element={<Home/> }></Route>
             <Route path='/about' element={ <About/> }></Route>
             <Route path='/search' element={ <Search/> }></Route>
+            <Route path='/posts/edit' element={ <EditPost/> }></Route>
             <Route path='/posts/:id' element={ <Post/> }></Route>
             <Route path='/register' element={!user ? <Register /> : <Navigate to='/' />} />
             <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
