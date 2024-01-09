@@ -16,17 +16,17 @@ const Search = () => {
   return (
     <SearchComponent>
     <h1>Resultados encontrados para: {search}</h1>
-    <SearchComponent>
+    <div>
       {posts && posts.length === 0 && (
-        <SearchComponent>
+        <NoSearh>
           <p>Não foram encontrados posts a partir da sua busca...</p>
           <BtnReturn to="/">
             Voltar
           </BtnReturn>
-        </SearchComponent>
+        </NoSearh>
       )}
       {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
-    </SearchComponent>
+    </div>
   </SearchComponent>
   )
 }

@@ -22,10 +22,14 @@ import Login from './pages/login/login'
 import CreatePost from './pages/createPost/createPost'
 import Dashboard from './pages/dashboard/dashboard'
 import Search from './pages/Search/Search.jsx'
+import Post from './pages/Post/Post.jsx'
+
 
 // CONTEXT
 
 import { AuthProvider } from './context/AuthContext'
+
+
 
 
 
@@ -60,6 +64,7 @@ function App() {
             <Route path='/' element={<Home/> }></Route>
             <Route path='/about' element={ <About/> }></Route>
             <Route path='/search' element={ <Search/> }></Route>
+            <Route path='/posts/:id' element={ <Post/> }></Route>
             <Route path='/register' element={!user ? <Register /> : <Navigate to='/' />} />
             <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
             <Route path='/posts/create' element={ user ? <CreatePost/> : <Navigate to='/login' /> }></Route>

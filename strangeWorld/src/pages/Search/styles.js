@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NoSearh = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    border: solid 1px;
+  display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap: 20px;    
+
 `
 export const SearchComponent = styled.div`
      display: flex;
@@ -15,6 +15,7 @@ export const SearchComponent = styled.div`
      align-items: center;
      flex-direction: column;
      gap: 20px;    
+     margin-top: 20px;
 
 `
 export const BtnReturn = styled(Link)`
