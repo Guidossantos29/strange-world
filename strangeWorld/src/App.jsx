@@ -14,13 +14,13 @@ import Footer from './components/footer'
 
 // PAGES
 
-import Home from './pages/Home/home.jsx'
+import Home from './pages/Home/Home.jsx'
 import About from './pages/about/about.jsx'
 import { ContainerMain } from './styles/ConatinerMain/ContainerMain.js'
-import Register from './pages/register/Register'
-import Login from './pages/login/login'
-import CreatePost from './pages/createPost/createPost'
-import Dashboard from './pages/dashboard/dashboard'
+import Register from './pages/Register/Register.jsx'
+import Login from './pages/login/login.jsx'
+import CreatePost from './pages/CreatePost/createPost.jsx'
+import Dashboard from './pages/Dashboard/dashboard.jsx'
 import Search from './pages/Search/Search.jsx'
 import Post from './pages/Post/Post.jsx'
 import EditPost from './pages/EditPost/EditPost.jsx'
@@ -29,10 +29,6 @@ import EditPost from './pages/EditPost/EditPost.jsx'
 // CONTEXT
 
 import { AuthProvider } from './context/AuthContext'
-
-
-
-
 
 
 

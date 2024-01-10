@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuthValue } from '../../context/AuthContext'
+import { useAuthValue } from '../../context/AuthContext.jsx'
 import { BtnContainer, CreatePostContainer, TextArea } from './styles.js'
-import { useInsertDocument } from '../../hooks/useInsertDocument'
+import { useInsertDocument } from '../../hooks/useInsertDocument.jsx'
 
 const CreatePost = () => {
 

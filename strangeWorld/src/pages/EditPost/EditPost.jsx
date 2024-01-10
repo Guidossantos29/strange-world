@@ -2,7 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import { useNavigate,useParams } from 'react-router-dom'
 import { useAuthValue } from '../../context/AuthContext'
-import { BtnContainer, CreatePostContainer, TextArea } from '../createPost/styles.js'
+import { BtnContainer, CreatePostContainer, TextArea } from '../CreatePost/styles.js'
 import { useFetchDocument } from '../../hooks/useFetchDocument.jsx'
 import { useUpdateDocument } from '../../hooks/useUpdateDocument.jsx'
 

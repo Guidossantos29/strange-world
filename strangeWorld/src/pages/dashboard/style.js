@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Dashboard from "./dashboard";
+
 
 export const BtnFisrtPost = styled(Link)`
      display: block;
