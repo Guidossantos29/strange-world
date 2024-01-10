@@ -26,7 +26,7 @@ const Home = () => {
     <HomeConatiner>
       <h1>Veja o que temos de mais recente</h1>
       <FormContainerNoPost onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => setQuery(e.target.value)} />
+        <input type="text" onChange={(e) => setQuery(e.target.value)} placeholder='Digite alguma tag'/>
         <button>O que procura?</button>
       </FormContainerNoPost>
       <FeedContainer>

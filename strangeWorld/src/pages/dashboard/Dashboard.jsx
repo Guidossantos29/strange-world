@@ -21,8 +21,8 @@ const Dashboard = () => {
 
   return (
     <DashboardContainer>
-      <h1>dashboard</h1>
-      <p>Gerencie seus Posts</p>
+      
+      <Title>Gerencie seus Posts</Title>
       <div>
       {posts && posts.length === 0 ? (
         <NoPostContainer>

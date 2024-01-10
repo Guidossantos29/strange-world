@@ -9,8 +9,8 @@ export const BtnFisrtPost = styled(Link)`
      background-color: green;
      border-radius: 30px;
      color: white;
-    text-decoration: none;
-    font-weight: bold;
+     text-decoration: none;
+     font-weight: bold;
     
 
 
@@ -32,6 +32,7 @@ export const DashboardContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 30px;
     
     
 `
@@ -44,7 +45,6 @@ export const ContainerTitle = styled.div`
       border-bottom: 2px solid #ccc;
       margin: 0 20%;
       padding: 10px;
-      
       gap: 50px;
       
 

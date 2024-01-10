@@ -8,6 +8,7 @@ export const HomeConatiner = styled.div`
     align-items: center;
     flex-direction: column;
     
+    
 
 
 `
@@ -37,5 +38,6 @@ export const FeedContainer = styled.div`
     background-color: #E3F6FF;
     border-radius: 20px;
     padding: 100px;
+    max-width: 60%;
 
 `

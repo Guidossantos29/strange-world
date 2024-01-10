@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useFetchDocument } from '../../hooks/useFetchDocument'
-import { PostContainer, Tags, TagsContainer } from './Post';
+import { ContentPost, ContentPostContainer, ImagePost, PostContainer, Tags, TagsContainer, TitlePost } from './Post';
 
 const Post = () => {
     const { id } = useParams();
@@ -10,10 +10,10 @@ const Post = () => {
     <PostContainer>
       {loading && <p>Carregando Post...</p>}
       {post && (
-        <>
-        <img src={post.image} alt="" />
-        <h1>{post.title}</h1>
-        <p>{post.body}</p>
+        <ContentPostContainer>
+        <ImagePost src={post.image} alt={Post.title} />
+        <TitlePost>{post.title}</TitlePost>
+        <ContentPost>{post.body}</ContentPost>
         <h3>Este Post trata sobre:</h3>
         <TagsContainer>
         {post.tags.map((tag) => (
@@ -25,7 +25,7 @@ const Post = () => {
            
         ))}
          </TagsContainer>
-        </>
+        </ContentPostContainer>
       )}
     </PostContainer>
   )
