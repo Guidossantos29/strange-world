@@ -68,7 +68,7 @@ function App() {
             <Route path='/posts/create/' element={ user ? <CreatePost/> : <Navigate to='/login' /> }></Route>
             <Route path='/posts/edit/:id' element={ user ? <EditPost/> : <Navigate to='/login' /> }></Route>
             <Route path='/dashboard' element={ user ? <Dashboard/> : <Navigate to='/login' /> }></Route>
-            
+
           </Routes>
         </ContainerMain>
         <Footer/>
