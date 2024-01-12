@@ -14,7 +14,7 @@ import Footer from './components/footer'
 
 // PAGES
 
-import Home from './pages/Home/index.jsx'
+import Home from './pages/Home/Home.jsx'
 import About from './pages/about/about.jsx'
 import { ContainerMain } from './styles/ConatinerMain/ContainerMain.js'
 import Register from './pages/Register/Register.jsx'
@@ -49,7 +49,7 @@ function App() {
   if(loadingUser) {
     return <p>Carregando...</p>
   }
-
+ 
 
   return (
    <div>
@@ -68,6 +68,7 @@ function App() {
             <Route path='/posts/create/' element={ user ? <CreatePost/> : <Navigate to='/login' /> }></Route>
             <Route path='/posts/edit/:id' element={ user ? <EditPost/> : <Navigate to='/login' /> }></Route>
             <Route path='/dashboard' element={ user ? <Dashboard/> : <Navigate to='/login' /> }></Route>
+            
           </Routes>
         </ContainerMain>
         <Footer/>
