@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormContainer,TitleRegister } from '../register/styles';
+import { FormContainer,TitleRegister } from '../Register/styles';
 import { useState,useEffect } from 'react';
 import { useAuthentication
  } from '../../hooks/useAuthentication';
