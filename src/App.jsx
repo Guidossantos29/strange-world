@@ -9,8 +9,8 @@ import { useAuthentication } from './hooks/useAuthentication'
 
 // COMPONENTS
 
-import NavBar from '../src/components/NavBar/Index.jsx'
-import Footer from '../src/components/footer/Index.jsx'
+import NavBar from './components/NavBar/Index.jsx'
+import Footer from './components/footer/Index.jsx'
 
 // PAGES
 
