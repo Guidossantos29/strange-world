@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { FeedContainer, FormContainerNoPost, HomeConatiner, NoPostContainer } from './styles'
 import { Link, useNavigate } from 'react-router-dom'
 import { useFetchDocuments } from '../../hooks/useFetchDocuments'
-import PostDetail from '../../components/PostDetail'
+import PostDetail from '../../components/PostDetail/Index'
 
 
 const Home = () => {

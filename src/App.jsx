@@ -9,21 +9,21 @@ import { useAuthentication } from './hooks/useAuthentication'
 
 // COMPONENTS
 
-import NavBar from './components/NavBar/index.jsx'
-import Footer from './components/Footer/index.jsx'
+import NavBar from '../src/components/NavBar/Index.jsx'
+import Footer from '../src/components/footer/Index.jsx'
 
 // PAGES
 
-import Home from './pages/Home/Home.jsx'
-import About from './pages/About/About.jsx'
+import Home from '../src/pages/Home/Home.jsx'
+import About from '../src/pages/About/About.jsx'
 import { ContainerMain } from './styles/ConatinerMain/ContainerMain.js'
-import Register from './pages/Register/Register.jsx'
-import Login from './pages/Login/Login.jsx'
-import CreatePost from './pages/CreatePost/CreatePost.jsx'
-import Dashboard from './pages/Dashboard/Dashboard.jsx'
-import Search from './pages/Search/Search.jsx'
-import Post from './pages/Post/Post.jsx'
-import EditPost from './pages/EditPost/EditPost.jsx'
+import Register from '../src/pages/Register/Register.jsx'
+import Login from '../src/pages/Login/Login.jsx'
+import CreatePost from '../src/pages/CreatePost/CreatePost.jsx'
+import Dashboard from '../src/pages/Dashboard/Dashboard.jsx'
+import Search from '../src/pages/Search/Search.jsx'
+import Post from '../src/pages/Post/Post.jsx'
+import EditPost from '../src/pages/EditPost/EditPost.jsx'
 
 
 // CONTEXT
