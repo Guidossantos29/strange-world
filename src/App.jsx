@@ -12,6 +12,7 @@ import { useAuthentication } from './hooks/useAuthentication'
 import NavBar from './components/navBar/index.jsx'
 import Footer from './components/footer/index.jsx'
 
+
 // PAGES
 
 import Home from './pages/home/home.jsx'
