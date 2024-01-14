@@ -14,16 +14,16 @@ import Footer from '../src/components/footer/Index.jsx'
 
 // PAGES
 
-import Home from '../src/pages/Home/Home.jsx'
-import About from '../src/pages/About/About.jsx'
+import Home from './pages/home/home.jsx'
+import About from './pages/about/about.jsx'
 import { ContainerMain } from './styles/ConatinerMain/ContainerMain.js'
-import Register from '../src/pages/Register/Register.jsx'
-import Login from '../src/pages/Login/Login.jsx'
-import CreatePost from '../src/pages/CreatePost/CreatePost.jsx'
-import Dashboard from '../src/pages/Dashboard/Dashboard.jsx'
-import Search from '../src/pages/Search/Search.jsx'
-import Post from '../src/pages/Post/Post.jsx'
-import EditPost from '../src/pages/EditPost/EditPost.jsx'
+import Register from './pages/register/register.jsx'
+import Login from './pages/login/login.jsx'
+import CreatePost from './pages/createPost/createPost.jsx'
+import Dashboard from './pages/dashboard/dashboard.jsx'
+import Search from './pages/search/search.jsx'
+import Post from './pages/post/post.jsx'
+import EditPost from './pages/editPost/editPost.jsx'
 
 
 // CONTEXT

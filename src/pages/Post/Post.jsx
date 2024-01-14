@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useFetchDocument } from '../../hooks/useFetchDocument'
-import { ContentPost, ContentPostContainer, ImagePost, PostContainer, Tags, TagsContainer, TitlePost } from './Post';
+import { ContentPost, ContentPostContainer, ImagePost, PostContainer, Tags, TagsContainer, TitlePost } from './style';
 
 const Post = () => {
     const { id } = useParams();
