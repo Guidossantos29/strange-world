@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFetchDocuments } from '../../hooks/useFetchDocuments'
 import { useQuery } from '../../hooks/useQuery'
-import PostDetail from '../../components/PostDetail/Index'
+import PostDetail from '../../components/postDetail'
 import { Link } from 'react-router-dom'
 import { BtnReturn, NoSearh, SearchComponent } from './styles'
 
