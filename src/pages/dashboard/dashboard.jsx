@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuthValue } from '../../context/AuthContext'
 import { useFetchDocuments } from '../../hooks/useFetchDocuments'
-import { NoPostContainer } from '../Home/styles'
+import { NoPostContainer } from '../home/styles'
 
 import { BtnFisrtPost, ContainerLinksDashboard, ContainerTitle, DashboardContainer, Title } from './style'
 import { useDeleteDocument } from '../../hooks/useDeleteDocument'
